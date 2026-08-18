@@ -11,13 +11,10 @@ var BASE_DADOS = "dados/";
  * @throws {Error} se a resposta HTTP não for bem-sucedida (ok === false)
  */
 async function buscarLugares() {
-  // TODO (Aula 04):
-  // 1. Use `fetch(BASE_DADOS + "lugares.json")` e `await` o resultado.
-  // 2. Se `resposta.ok` for falso, lance um Error com uma mensagem
-  //    explicando o problema (inclua `resposta.status` na mensagem).
-  // 3. Caso contrário, retorne `resposta.json()` (essa chamada também
-  //    retorna uma Promise, então pode usar `return resposta.json()`
-  //    sem `await`).
+  const resposta = await fetch(BASE_DADOS + "lugares.json")
+  if(!resposta.ok){
+    
+  }
 }
 
 /**
