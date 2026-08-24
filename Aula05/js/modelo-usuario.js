@@ -1,16 +1,16 @@
 class Usuario {
   constructor(id, nome, email, senhaHash) {
-    // TODO (Aula 05): valide antes de atribuir a `this`, lançando
-    // `new ErroValidacao(mensagem, nomeDoCampo)` quando necessário:
-    //
-    //   - nome: string com pelo menos 2 caracteres
-    //   - email: precisa "parecer" um email válido — dica: regex
-    //     /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    //   - senhaHash: string não vazia (NUNCA guarde a senha em texto
-    //     puro aqui — o hash de verdade só vai existir a partir da
-    //     aula 11, com bcrypt no backend)
-    //
-    // Se passar, atribua this.id, this.nome, this.email (dica: pode
-    // normalizar para minúsculas) e this.senhaHash.
+    if (typeof nome !== "string" || nome.trim().length < 2) {
+      throw new ErroValidacao("Nome do usuário deve ter pelo menos 2 acracteres", "" )
+    }
+    if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+@[^\s@]+$/.test(email)){
+      throw new ErroValidacao("Email Inválido", "email");
+    }
+    if(typeof senhaHash !== "string" || senhaHash.trim().length === 0) {
+      throw new ErrorValidacao("senhaHash é obrigatório ( a senha em texto puro nunca deve ser armazenada como texto puro", "senhaHash");
+    }
+    this.id = id
+    this.nome = nome.trim()
+    this.email = email.trim().toLowerCase()
   }
 }
