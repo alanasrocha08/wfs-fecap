@@ -1,5 +1,6 @@
 import ListaLugares from "./components/ListaLugares";
 import { lugaresMock } from "./data/lugaresMock";
+import Teste from "./components/Teste";
 
 function App() {
   return (
