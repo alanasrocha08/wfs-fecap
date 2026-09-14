@@ -16,6 +16,6 @@ class Avaliacao {
     this.nota = nota
     this.comentario = comentario.trim()
     this.lugar = lugar
-    this.usuario = usuario 
+    this.usuario = usuario  
   }
 }
