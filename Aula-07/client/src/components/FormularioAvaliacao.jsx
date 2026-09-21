@@ -1,13 +1,8 @@
 import { useState } from "react";
 
-/**
- * Formulário controlado: cada campo tem seu valor guardado no state do
- * React (`value` + `onChange`), então o React é a "fonte da verdade"
- * do que está na tela — nunca lemos o DOM diretamente.
- */
+
 function FormularioAvaliacao({ lugares, aoEnviar }) {
-  // TODO (Aula 07):
-  // 1. Crie um estado para cada campo do formulário com useState:
+
   //    - lugarId (inicial: lugares[0]?.id ?? "")
   //    - nota (inicial: 5)
   //    - comentario (inicial: "")
